@@ -1,3 +1,3 @@
 # Bank-Management-System
 # flask and MySQL
-# Work In Progress
+# Last finishing Touches and hosting left
