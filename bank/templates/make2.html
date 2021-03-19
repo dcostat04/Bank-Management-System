@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body id="page-top">
+    <div id="wrapper">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+            <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                    <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
+                    <div class="sidebar-brand-text mx-3"><span>Bank of trevor</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item"><a class="nav-link active" href="{{url_for('index')}}"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{url_for('make')}}"><i class="fas fa-user"></i>&nbsp;Make a Transaction</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{url_for('transhis')}}"><i class="fas fa-table"></i>&nbsp;Transaction History</a></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                </ul>
+                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+            </div>
+        </nav>
+
+<p style="margin-top: 125px;color: rgb(0,0,0);margin-bottom: 10px;">&nbsp; &nbsp;ID : {{value2}}</p>
+    <p style="color: rgb(0,0,0);margin-bottom: 10px;">&nbsp; &nbsp;Email : {{value3}}</p>
+    <p style="color: rgb(0,0,0);">&nbsp; &nbsp;Current Balance : {{value4}}</p>
+    <div class="login-clean">
+        <form method="post" action="/transactions">
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><i class="icon ion-card"></i></div>
+            <div class="form-group"><input type="hidden" name="pname" value="{{value1}}"/></div>
+            <div class="form-group"><input type="hidden" name="pbal" value="{{value4}}"/></div>
+            <div class="form-group"><input class="form-control" type="text" name="reciever" placeholder="Username"></div>
+            <div class="form-group"><input class="form-control" type="text" name="amount" placeholder="Amount"></div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">&nbsp;Transfer Money</button></div>
+        </form>
+    </div>
+    </div>
+
+        <script src="{{ url_for('static',filename='assets/js/jquery.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='assets/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='assets/js/chart.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='assets/js/bs-init.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+    <script src="{{ url_for('static',filename='assets/js/theme.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+</body>
+</html>
