@@ -1,0 +1,38 @@
+CREATE DATABASE IF NOT EXISTS `bank` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `bank`;
+
+
+CREATE TABLE IF NOT EXISTS `customers`(
+	`id` int(9) NOT NULL,
+  	`name` varchar(50) NOT NULL,
+  	`email` varchar(50) NOT NULL,
+    `curr_bal` float(10) NOT NULL,
+    PRIMARY KEY (`id`)
+);
+
+INSERT INTO customers VALUES
+
+
+(1, 'Trevor', 'dcosta@gmail.com',400000),
+(2, 'Edwin', 'edugod@gmail.com', 400000),
+(3, 'Christopher', 'angela@gmail.com', 400000),
+(4, 'Pratik Dhamaal', 'snakes7@gmail.com', 400000),
+(5, 'Pranit', 'sir@gmail.com', 30000),
+(6, 'Leander', 'Ponraj@gmail.com', 50000),
+(7, 'Selmon', 'bhai@gmail.com', 50000),
+(8, 'Didi', 'st@gmail.com',50),
+(9, 'Chotu', 'rg@gmail.com', 30000),
+(10, 'Yashraj', 'Mane@gmail.com', 50000);
+
+
+
+select * from customers;
+
+CREATE TABLE IF NOT EXISTS `transactions`(
+	`sname` varchar(50) NOT NULL,
+  	`rname` varchar(50) NOT NULL,
+  	`amount` int(10) NOT NULL,
+    `time` timestamp not null DEFAULT CURRENT_TIMESTAMP
+);
+
+select * from transactions;
